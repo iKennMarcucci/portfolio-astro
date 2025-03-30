@@ -1,0 +1,53 @@
+---
+import LinkedIn from "../../public/Icon/LinkedIn.astro";
+import AvailableBadge from "./ui/AvailableBadge.astro";
+import TypingText from "./ui/TypingText.astro";
+import PDF from "../../public/Icon/PDF.astro";
+import Button from "./ui/Button.astro";
+---
+
+<section
+   class="flex items-center justify-between max-lg:justify-center max-[420px]:my-24 my-48 w-full"
+>
+   <div
+      class="space-y-8 max-lg:space-y-5 max-lg:flex max-lg:flex-col max-lg:items-center lg:w-1/2 max-lg:w-full"
+   >
+      <div
+         class="border-zinc-900 rounded-full overflow-hidden w-60 border-4 mx-auto lg:hidden"
+      >
+         <img src="/img/profile.webp" alt="img" />
+      </div>
+
+      <AvailableBadge />
+
+      <h1 class="font-bold text-5xl max-sm:text-4xl max-lg:text-center">
+         ¡Hola, Soy Kenn!
+      </h1>
+
+      <div class="text-xl max-w-lg max-lg:text-center">
+         <TypingText
+            speed={40}
+            text={`+3 años de experiencia. <span class="text-yellow-300 font-bold">Ingeniero de Sistemas y Desarrollador Frontend</span> en Colombia. Especializado en el desarrollo de aplicaciones web y móviles únicas.`}
+         />
+      </div>
+
+      <div
+         class="flex items-center gap-2.5 whitespace-nowrap max-lg:mx-auto max-sm:w-full"
+      >
+         <Button link={"/portfolio/KennMarcucci_CV_es.pdf"}>
+            <PDF slot={"before"} size={20} stroke={2} />
+            Curriculum Vitae
+         </Button>
+         <Button link={"https://www.linkedin.com/in/kennmarcucci/"}>
+            <LinkedIn slot={"before"} size={20} stroke={2} />
+            LinkedIn
+         </Button>
+      </div>
+   </div>
+
+   <div
+      class="border-zinc-900 rounded-full overflow-hidden w-60 border-4 mx-auto max-lg:hidden"
+   >
+      <img src="/img/profile.webp" alt="img" />
+   </div>
+</section>

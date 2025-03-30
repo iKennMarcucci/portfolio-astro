@@ -1,0 +1,70 @@
+---
+import Person from "../../public/Icon/Person.astro";
+
+const calcularEdad = (fecha: string): number => {
+   const hoy = new Date();
+   const nacimiento = new Date(fecha);
+   let edad = hoy.getFullYear() - nacimiento.getFullYear();
+   const mes = hoy.getMonth() - nacimiento.getMonth();
+   const dia = hoy.getDate() - nacimiento.getDate();
+
+   if (mes < 0 || (mes === 0 && dia < 0)) {
+      edad--;
+   }
+
+   return edad;
+};
+---
+
+<section class="space-y-10 mb-40">
+   <h2 class="text-3xl font-bold flex items-center gap-4">
+      <Person size={28} stroke={2} />
+      Sobre Mí
+   </h2>
+
+   <div class="flex max-lg:flex-col justify-between items-center gap-20">
+      <div class="flex flex-col gap-4 lg:w-3/5">
+         <p>
+            Soy Kenn Marcucci, tengo {calcularEdad("2000-12-01")} años y
+            <b class="text-yellow-200">
+               soy desarrollador Frontend con formación en Ingeniería de Sistemas.
+            </b>
+            Mi trayectoria en programación comenzó en 2019, cuando inicié mis estudios
+            universitarios, y desde entonces me he especializado en la creación de
+            interfaces modernas, eficientes y escalables.
+         </p>
+
+         <p>
+            A lo largo de mi carrera, me he enfocado en aprender
+            <b class="text-yellow-200">
+               React, Next.js, Astro, Node.js y Express.js
+            </b>, utilizando
+            <b class="text-yellow-200"> Tailwind CSS</b> para estilización y desplegando
+            proyectos en plataformas como
+            <b class="text-yellow-200"> Vercel y DigitalOcean.</b> Además, tengo
+            experiencia con bases de datos relacionales y no relacionales como
+            <b class="text-yellow-200"> MySQL, PostgreSQL y MongoDB. </b>
+         </p>
+
+         <p class="white">
+            Siempre en busca de nuevos desafíos, estoy comprometido con
+            <b class="text-yellow-200">
+               seguir perfeccionando mis habilidades y contribuir a proyectos
+               innovadores.
+            </b>
+            Estoy listo para seguir creciendo y aportar valor en cada oportunidad
+            que se presente.
+         </p>
+      </div>
+
+      <div
+         class="border-zinc-900 overflow-hidden w-80 border-4 mx-auto aspect-square rounded-xl rotate-6"
+      >
+         <img
+            class="object-cover aspect-square -rotate-6 scale-125"
+            src="/img/profile2.webp"
+            alt="img"
+         />
+      </div>
+   </div>
+</section>

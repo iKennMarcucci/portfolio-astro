@@ -1,0 +1,87 @@
+---
+import JavaScript from "../../public/Icon/JavaScript.astro";
+import Bootstrap from "../../public/Icon/Bootstrap.astro";
+import AstroIcon from "../../public/Icon/AstroIcon.astro";
+import Tailwind from "../../public/Icon/Tailwind.astro";
+import Project from "../../public/Icon/Project.astro";
+import Vercel from "../../public/Icon/Vercel.astro";
+import Html from "../../public/Icon/Html.astro";
+import ProjectRow from "./ui/ProjectRow.astro";
+import Css from "../../public/Icon/Css.astro";
+---
+
+<section class="space-y-10 mb-40">
+   <h2 class="text-3xl font-bold flex items-center gap-4">
+      <Project size={28} stroke={2} />
+      Mis Proyectos
+   </h2>
+
+   <ProjectRow
+      desc={"''Searching and Sorting Algorithms'' es un sitio web educativo dedicado a los algoritmos de búsqueda y ordenamiento. Ofrece una inmersión profunda en la teoría de algoritmos, explicaciones sobre la notación Big O y complejidad temporal, y ejemplos de implementación en múltiples lenguajes de programación."}
+      linkCode={"https://github.com/iKennMarcucci/Search-Sort-Algorithms"}
+      linkProject={"https://search-sort-algorithms.vercel.app/"}
+      title={"Searching and Sorting Algorithms"}
+      img={"/projects/SearchSort.webp"}
+   >
+      <div class="flex gap-2">
+         <span
+            class="bg-amber-500/25 h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <AstroIcon size={12} />
+            Astro
+         </span>
+
+         <span
+            class="bg-blue-500/25 h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <Tailwind size={16} />
+            Tailwind
+         </span>
+
+         <span
+            class="bg-black/25 h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <Vercel size={12} />
+            Vercel
+         </span>
+      </div>
+   </ProjectRow>
+
+   <ProjectRow
+      desc={"''Round Robin Scheduling'' tiene como objetivo explicar el concepto del Algoritmo de Planificación Round Robin, detallando qué es el Quantum, el tipo de cola que utiliza y su funcionamiento general."}
+      linkCode={"https://github.com/iKennMarcucci/Round_Robin"}
+      linkProject={"https://ikennmarcucci.github.io/Round_Robin/RoundRobin.html"}
+      title={"Round Robin Scheduling"}
+      img={"/projects/RoundRobin.webp"}
+   >
+      <div class="flex gap-2">
+         <span
+            class="bg-amber-500/25 h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <Html size={16} />
+            HTML
+         </span>
+
+         <span
+            class="bg-blue-500/25 max-[420px]:hidden h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <Css size={16} />
+            CSS
+         </span>
+
+         <span
+            class="bg-yellow-200/25 h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <JavaScript size={14} />
+            JavaScript
+         </span>
+
+         <span
+            class="bg-purple-600/25 h-full flex justify-center items-center rounded-full font-medium gap-2 py-1 px-2.5 text-xs cursor-default select-none"
+         >
+            <Bootstrap size={16} />
+            Bootstrap
+         </span>
+      </div>
+   </ProjectRow>
+</section>

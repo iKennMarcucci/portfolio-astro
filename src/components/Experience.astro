@@ -1,0 +1,54 @@
+---
+import ExperienceRow from "./ui/ExperienceRow.astro";
+import Exp from "../../public/Icon/Exp.astro";
+
+const experienceArray = [
+   {
+      empresa: "Mazzi Arquitectos",
+      puesto: "Frontend Developer",
+      fecha: "Agosto, 2024 - Septiembre, 2024",
+      desc: "Mazzi Arquitectos soñaba con una mayor presencia en el mercado, mejorar la interacción con potenciales clientes y destacar sus proyectos realizados. Junto a ellos desarrollé una Landing Page que cumpliera todos los requerimientos técnicos, lo cual resultó en una notable mejora en los objetivos de la empresa.",
+      pais: "CO",
+      link: "https://mazziarquitectos.vercel.app/",
+   },
+   {
+      empresa: "UFPS - Prácticas",
+      puesto: "Analista QA",
+      fecha: "Abril, 2024 - Julio, 2024",
+      desc: "Realicé un análisis detallado de un Sistema de Nómina de Pagos de Personal y Administración de Recursos Humanos basado en JBoss 4.2.3, su arquitectura, sus funcionalidades existentes y los errores detectados. Documenté toda la información para establecer las bases del desarrollo de una nueva versión del software de nómina.",
+      pais: "CO",
+      link: "http://nomina.ufps.edu.co:9191/nominaufps/home.seam",
+   },
+   {
+      empresa: "GetMoney",
+      puesto: "Frontend Developer",
+      fecha: "Octubre, 2023 - Abril, 2024",
+      desc: "GetMoney aspiraba a permitir a los usuarios reservar divisas en más de 2000 centros cambiarios y 5000 sucursales bancarias. En colaboración con una startup, desarrollamos una aplicación web que integró funcionalidades como la posibilidad de agendar citas de forma conveniente y un sistema de geolocalización para localizar las ubicaciones más cercanas, garantizando siempre la mejor opción.",
+      pais: "MX",
+      link: "https://mygetmoney.com/",
+   },
+];
+---
+
+<section class="space-y-10 mb-40">
+   <h2 class="text-3xl font-bold flex items-center gap-4">
+      <Exp size={28} stroke={2} />
+      Experiencia Laboral
+   </h2>
+   <div
+      class="border-zinc-700 grid grid-cols-12 w-full border-l-2 px-10 py-2 pr-0 gap-y-10"
+   >
+      {
+         experienceArray.map((exp) => (
+            <ExperienceRow
+               empresa={exp.empresa}
+               puesto={exp.puesto}
+               fecha={exp.fecha}
+               desc={exp.desc}
+               pais={exp.pais}
+               link={exp.link}
+            />
+         ))
+      }
+   </div>
+</section>
