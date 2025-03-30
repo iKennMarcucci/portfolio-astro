@@ -1,0 +1,44 @@
+---
+import Github from "../../../public/Icon/Github.astro";
+import Link from "../../../public/Icon/Link.astro";
+import Button from "./Button.astro";
+
+interface Props {
+   linkProject: string;
+   linkCode: string;
+   title: string;
+   desc: string;
+   img: string;
+}
+
+const { linkProject, linkCode, img, desc, title } = Astro.props;
+---
+
+<article class="flex justify-center gap-5 max-lg:flex-col">
+   <a
+      href={linkProject}
+      class="border-zinc-900 bg-black overflow-hidden rounded-xl border-4 w-1/2 max-lg:w-full lg:h-[268px]"
+   >
+      <img
+         src={img}
+         alt={img}
+         class="aspect-video object-cover hover:scale-110 duration-1000"
+      />
+   </a>
+   <aside class="flex flex-col lg:w-1/2 gap-2">
+      <h2 class="text-3xl font-bold flex items-center gap-4">{title}</h2>
+      <div class="flex justify-start items-center gap-2 mb-2"><slot /></div>
+      <p class="text-gray-300 flex-grow">{desc}</p>
+      <div class="flex gap-2 mt-auto max-sm:w-full">
+         <Button link={linkCode}>
+            <Github slot={"before"} size={20} stroke={2} />
+            Código Fuente
+         </Button>
+
+         <Button link={linkProject}>
+            <Link slot={"before"} size={20} stroke={2} />
+            Ver Proyecto
+         </Button>
+      </div>
+   </aside>
+</article>

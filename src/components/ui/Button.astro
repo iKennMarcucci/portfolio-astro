@@ -1,0 +1,16 @@
+---
+interface Props {
+   link: string;
+}
+
+const { link } = Astro.props;
+
+const defaultClass =
+   "bg-zinc-900 hover:bg-slate-100 hover:text-zinc-900 max-sm:w-full max-sm:whitespace-nowrap border-zinc-800 cursor-pointer justify-center items-center rounded-full duration-150 border flex gap-2 px-4 py-1";
+---
+
+<a href={link} target="_blank" class={defaultClass}>
+   <slot name="before" />
+   <slot />
+   <slot name="after" />
+</a>

@@ -1,0 +1,48 @@
+---
+interface Props {
+   speed: number;
+   text: string;
+}
+
+const { text, speed } = Astro.props;
+---
+
+<h5 id="typing-effect"></h5>
+
+<script define:vars={{ text, speed }}>
+   // Dividimos el string en partes: etiquetas y texto
+   const parts = text.split(/(<[^>]+>)/).filter((part) => part !== "");
+   let partIndex = 0;
+   let charIndex = 0;
+   let output = "";
+
+   function typeNext() {
+      if (partIndex >= parts.length) return;
+
+      const currentPart = parts[partIndex];
+
+      // Si es una etiqueta completa, la añadimos de golpe.
+      if (currentPart.startsWith("<") && currentPart.endsWith(">")) {
+         output += currentPart;
+         partIndex++;
+         // Actualizamos el DOM y continuamos inmediatamente.
+         document.getElementById("typing-effect").innerHTML = output;
+         typeNext();
+      } else {
+         // Es texto plano, lo animamos carácter a carácter.
+         if (charIndex < currentPart.length) {
+            output += currentPart.charAt(charIndex);
+            charIndex++;
+            document.getElementById("typing-effect").innerHTML = output;
+            setTimeout(typeNext, speed);
+         } else {
+            // Terminó el texto de la parte actual, reiniciamos y pasamos a la siguiente.
+            partIndex++;
+            charIndex = 0;
+            setTimeout(typeNext, speed);
+         }
+      }
+   }
+
+   typeNext();
+</script>
