@@ -1,6 +1,7 @@
 ---
 import Background from "../components/ui/Background.astro";
 import Footer from "../components/ui/Footer.astro";
+import Analytics from "@vercel/analytics/astro";
 import "@fontsource/onest/100.css";
 import "@fontsource/onest/200.css";
 import "@fontsource/onest/300.css";
@@ -33,6 +34,7 @@ import "../styles/global.css";
 		<Background />
 		<slot />
 		<Footer />
+		<Analytics />
 	</body>
 </html>
 
